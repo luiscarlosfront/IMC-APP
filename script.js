@@ -1,17 +1,19 @@
 const calcular = document.getElementById('calcular')
-const resultado = document.getElementById('resultado')
 
-function imc(){
+
+function imc(e){
   const altura = document.getElementById('altura').value
   const peso = document.getElementById('peso').value
+  const resultado = document.getElementById('resultado')
 
-  
   if(peso && altura){
       const resultadoImc = (peso / (altura * altura)).toFixed(1)
-      resultado.textContent = `Seu imc é ${resultadoImc}`
+      resultado.innerHTML = `Seu imc é ${resultadoImc}`
+      e.preventDefault()
     } 
     else{
-      resultado.textContent = 'Preencha os campos'
+      resultado.innerHTML = 'Preencha os campos'
+      e.preventDefault()
     }
   }
 
